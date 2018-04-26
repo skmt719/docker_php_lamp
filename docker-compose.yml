@@ -16,6 +16,7 @@ services:
     image: php:7.1-apache
     ports:
       - '8000:80'
+      - "2022:22"
     volumes:
       - ./html:/var/www/html
     links:
@@ -27,7 +28,7 @@ services:
       - PMA_ARBITRARY=1
       - PMA_HOST=mysql
       - PMA_USER=root
-      - PMA_PASSWORD=pass
+      - PMA_PASSWORD=root
     links:
       - mysql
     ports:
