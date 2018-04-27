@@ -20,6 +20,8 @@ services:
       - ./html:/var/www/html
     links:
       - mysql
+    depends_on:
+      - mysql
   #phpmyadmin
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
