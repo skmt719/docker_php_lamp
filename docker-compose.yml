@@ -4,6 +4,7 @@ services:
   mysql: # これは自由につけて良い名前
     container_name: "mysql"
     image: mysql:5.6
+    restart: always
     ports:
       - '3306:3306' # デバッグ用に開けとく。SequelProなどで繋げるように
     environment:
