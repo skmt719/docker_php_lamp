@@ -24,6 +24,7 @@ services:
       - mysql
   #phpmyadmin
   phpmyadmin:
+    container_name: "phpmyadmin"
     image: phpmyadmin/phpmyadmin
     environment:
       - PMA_ARBITRARY=1
