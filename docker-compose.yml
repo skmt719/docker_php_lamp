@@ -3,12 +3,15 @@ services:
   # DB
   mysql: # これは自由につけて良い名前
     container_name: "mysql"
-    image: mysql:5.6
+    build:
+      context: .
+      dockerfile: ./mysql/Dockerfile-MySQL
     restart: always
     ports:
       - '3306:3306' # デバッグ用に開けとく。SequelProなどで繋げるように
     environment:
       MYSQL_ROOT_PASSWORD: root
+      TZ: "Asia/Tokyo"
     volumes:
       - ./db:/var/lib/mysql
   # php
